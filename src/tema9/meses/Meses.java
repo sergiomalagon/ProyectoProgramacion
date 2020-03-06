@@ -114,7 +114,7 @@ class RunMeses {
         System.out.println("" + febrero.diasEstaciones(estacion.toLowerCase()));
         System.out.println("Introduce un a�o");
         int a�o = sc.nextInt();
-        System.out.println("" + febrero.diasEsteMes(a�o));
+        System.out.println("" + febrero.diasEsteMes(año));
         System.out.println("Dias hasta noche vieja: " + febrero.diasNocheVieja());
 
     }
