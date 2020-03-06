@@ -71,9 +71,9 @@ public enum Meses {
             case "oto�o":
                 fecha1.set(fechaTotal.get(Calendar.YEAR), fechaTotal.get(Calendar.MONTH), fechaTotal.get(Calendar.DAY_OF_MONTH));
                 fecha2.set(fechaTotal.get(Calendar.YEAR), 8, 21);
-                long diffOto�o = fecha2.getTimeInMillis() - fecha1.getTimeInMillis();
-                int diasOto�o = (int) (diffOto�o / (1000 * 60 * 60 * 24));
-                return diasOto�o;
+                long diffOtoño = fecha2.getTimeInMillis() - fecha1.getTimeInMillis();
+                int diasOtoño = (int) (diffOtoño / (1000 * 60 * 60 * 24));
+                return diasOtoño;
             case "invierno":
                 fecha1.set(fechaTotal.get(Calendar.YEAR), fechaTotal.get(Calendar.MONTH), fechaTotal.get(Calendar.DAY_OF_MONTH));
                 fecha2.set(fechaTotal.get(Calendar.YEAR), 11, 21);
@@ -84,7 +84,7 @@ public enum Meses {
         return 0;
     }
 
-    public int diasEsteMes(int a�o) {
+    public int diasEsteMes(int año) {
         if (Year.isLeap(año) && ordinal() == 1) {
             return dias;
         }
@@ -113,7 +113,7 @@ class RunMeses {
         String estacion = sc.next();
         System.out.println("" + febrero.diasEstaciones(estacion.toLowerCase()));
         System.out.println("Introduce un a�o");
-        int a�o = sc.nextInt();
+        int año = sc.nextInt();
         System.out.println("" + febrero.diasEsteMes(año));
         System.out.println("Dias hasta noche vieja: " + febrero.diasNocheVieja());
 
