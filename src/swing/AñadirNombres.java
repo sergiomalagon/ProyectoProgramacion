@@ -11,14 +11,14 @@ import javax.swing.DefaultListModel;
  *
  * @author Vespertino
  */
-public class AñadirNombres extends javax.swing.JFrame {
+public class AÃ±adirNombres extends javax.swing.JFrame {
 
     private DefaultListModel<String> nombres;
 
     /**
      * Creates new form AÃ±adirNombres
      */
-    public AñadirNombres() {
+    public AÃ±adirNombres() {
         initComponents();
         nombres = new DefaultListModel<>();
         listaNombres.setModel(nombres);
@@ -137,7 +137,7 @@ public class AñadirNombres extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AñadirNombres().setVisible(true);
+                new AÃ±adirNombres().setVisible(true);
             }
         });
     }

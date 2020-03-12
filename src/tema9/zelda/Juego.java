@@ -35,7 +35,7 @@ public class Juego {
 
     public void crearHabitaciones() {
         Habitacion pasillo = new Habitacion("Pasillo");
-        Habitacion baño = new Habitacion("Baño");
+        Habitacion baÃ±o = new Habitacion("BaÃ±o");
         Habitacion habitacionPrincipal = new Habitacion("Habitacion Principal");
         Habitacion habitacionInvitados = new Habitacion("Habitacion Inivitados");
         Habitacion cocina = new Habitacion("Cocina");
@@ -43,14 +43,14 @@ public class Juego {
 
         habitacionActual.setSalida("este", pasillo);
 
-        pasillo.setSalida("norte", baño);
+        pasillo.setSalida("norte", baÃ±o);
         pasillo.setSalida("este", habitacionInvitados);
         pasillo.setSalida("sur", cocina);
 
-        baño.setSalida("sur", pasillo);
-        baño.setSalida("este", habitacionPrincipal);
+        baÃ±o.setSalida("sur", pasillo);
+        baÃ±o.setSalida("este", habitacionPrincipal);
 
-        habitacionPrincipal.setSalida("oeste", baño);
+        habitacionPrincipal.setSalida("oeste", baÃ±o);
         habitacionPrincipal.setSalida("sur", habitacionInvitados);
         habitacionPrincipal.setSalida("este", comerdor);
 
@@ -71,7 +71,7 @@ public class Juego {
         bienvenido();
         while (true) {
             if (habitacionActual.getEnemigo() != null) {
-                recibirDaño();
+                recibirDaÃ±o();
             }
             Comando c = transformar.getCommand();
             procesarComando(c);
@@ -120,8 +120,8 @@ public class Juego {
         System.out.flush();
     }
 
-    public void recibirDaño() {
-        link.setVida(link.getVida() - enemigo.getDaño());
+    public void recibirDaÃ±o() {
+        link.setVida(link.getVida() - enemigo.getDaÃ±o());
         System.out.println("Has sido atacado por un " + enemigo.getTipo() + " tu vida actual es: " + link.getVida());
     }
 

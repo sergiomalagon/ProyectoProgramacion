@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class Enemigo {
 
-    private int daño;
+    private int daÃ±o;
     private String tipo;
     private int vida;
 
@@ -21,12 +21,12 @@ public class Enemigo {
         generarEnemigo();
     }
 
-    public int getDaño() {
-        return daño;
+    public int getDaÃ±o() {
+        return daÃ±o;
     }
 
-    public void setDaño(int daño) {
-        this.daño = daño;
+    public void setDaÃ±o(int daÃ±o) {
+        this.daÃ±o = daÃ±o;
     }
 
     public String getTipo() {
@@ -52,15 +52,15 @@ public class Enemigo {
         int necrofago = rd.nextInt(100);
         if (cucaracha < 80) {
             this.tipo = "Cucaracha";
-            this.daño = 10;
+            this.daÃ±o = 10;
             this.vida = 15;
         } else if (muercielago < 60) {
             this.tipo = "Murcielago";
-            this.daño = 20;
+            this.daÃ±o = 20;
             this.vida = 25;
         } else if (necrofago < 30) {
             this.tipo = "Necrofago";
-            this.daño = 30;
+            this.daÃ±o = 30;
             this.vida = 35;
         }
     }
