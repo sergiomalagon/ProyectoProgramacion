@@ -20,18 +20,18 @@ Debe calcular la edad del usario supuniendo que ya a cumplido años
 public class Ej4 {
 
     public static void main(String[] args) {
-        short a�onacimiento;
-        short a�oactual;
+        short añonacimiento;
+        short añoactual;
 
         Scanner keyboard = new Scanner(System.in);
         
         System.out.println("Por favor introduzca su año de nacimiento:");
-        a�onacimiento = keyboard.nextShort();
+        añonacimiento = keyboard.nextShort();
         
         System.out.println("Por favor introduzca el año actual:");
-        a�oactual = keyboard.nextShort();
+        añoactual = keyboard.nextShort();
 
-        byte edad = (byte) (a�oactual - a�onacimiento);
+        byte edad = (byte) (añoactual - añonacimiento);
         System.out.println("Tu edad es de " + (edad) + " años");
 
     }

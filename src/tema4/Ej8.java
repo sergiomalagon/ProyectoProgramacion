@@ -21,7 +21,7 @@ public class Ej8 {
     public static void main(String[] args) {
         int dia;
         int mes;
-        int a�o;
+        int año;
         Scanner teclado;
         teclado = new Scanner(System.in);
 
@@ -38,13 +38,13 @@ public class Ej8 {
 
         do {
             System.out.println("Introduce un año");
-            a�o = teclado.nextInt();
-        } while (a�o < 1 || a�o > 9999);
+            año = teclado.nextInt();
+        } while (año < 1 || año > 9999);
 
         //CALCULAMOS
-        if ((dia > 0 && dia < 32) && (mes > 0 && mes < 13) && (a�o > 0 && a�o < 9999)) {
+        if ((dia > 0 && dia < 32) && (mes > 0 && mes < 13) && (año > 0 && año < 9999)) {
             System.out.println("LA FECHA ES CORRECTA");
-            if (dia > 28 && mes == 2 && a�o % 4 == 0 && a�o % 400 == 0) {
+            if (dia > 28 && mes == 2 && año % 4 == 0 && año % 400 == 0) {
             System.out.println("LA FECHA ES CORRECTA");
 
         } else {

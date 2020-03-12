@@ -19,24 +19,24 @@ que hay entre 2 numero(año1 y año2) introducidos por el usuario.
 public class Ej11 {
 
     public static void main(String[] args) {
-        int a�o1, a�o2, contador = 0;
+        int año1, año2, contador = 0;
         Scanner teclado;
         teclado = new Scanner(System.in);
 
         do {
             System.out.println("Introduce el año1");
-            a�o1 = teclado.nextInt();
-        } while (a�o1 < 0);
+            año1 = teclado.nextInt();
+        } while (año1 < 0);
         do {
             System.out.println("Introduce el año2");
-            a�o2 = teclado.nextInt();
-        } while (a�o2 > 9999);
+            año2 = teclado.nextInt();
+        } while (año2 > 9999);
 
-        while (a�o1 != a�o2) {
-            if ((a�o1 % 4 == 0) && ((a�o1 % 100 != 0) || (a�o1 % 400 == 0))) {
+        while (año1 != año2) {
+            if ((año1 % 4 == 0) && ((año1 % 100 != 0) || (año1 % 400 == 0))) {
                 contador++;
             }
-            a�o1++;
+            año1++;
         }
         System.out.println("El numero de años bisiestos son: " + contador);
     }

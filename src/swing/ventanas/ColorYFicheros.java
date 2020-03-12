@@ -70,10 +70,10 @@ public class ColorYFicheros extends JFrame {
                 new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
                 new ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
                 new ExtensionFilter("All Files", "*.*"));
-        File selectedFile = fileChooser.showOpenDialog(mainStage);
-        if (selectedFile != null) {
-            mainStage.display(selectedFile);
+       // File selectedFile = fileChooser.showOpenDialog(mainStage);
+      //  if (selectedFile != null) {
+      //      mainStage.display(selectedFile);
         }
     }
     
-}
+//}
