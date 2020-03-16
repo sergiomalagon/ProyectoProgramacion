@@ -16,15 +16,23 @@ public class Intento {
     private char letra;
 
     public Intento() {
-        this.letra=' ';
+        this.letra = ' ';
     }
 
-    public void pedirLetra() {
-        String aux;
-        System.out.println("Introduce una letra");
+    public char pedirLetra() {
         Scanner sc = new Scanner(System.in);
-        aux = sc.next().toLowerCase();
-        this.letra = aux.charAt(0);
+        String s;
+
+        do {
+            System.out.print("Introduce una letra: ");
+            s = sc.next();
+            if (!s.matches("[A-Za-z]")) {
+                System.out.println("Error ,necesito una letra");
+            } else {
+                this.letra = s.charAt(0);
+            }
+        } while (!s.matches("[A-Za-z]"));
+        return this.letra;
     }
 
     public char getLetra() {

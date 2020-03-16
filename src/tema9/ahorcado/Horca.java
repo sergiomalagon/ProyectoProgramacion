@@ -21,7 +21,7 @@ public class Horca {
         this.vida++;
     }
 
-    public void mostrarHorca() {
+    public void mostrar() {
         switch (this.vida) {
             case 0:
                 System.out.println(" ");

@@ -27,32 +27,32 @@ public class Ahorcado {
 
     public void mostrarInstrucciones() {
         System.out.println("Introduce una letra");
-        System.out.println("Si la letra se encuntra dentro de la palabra, se mostrara en su posicion");
+        System.out.println("Si la letra se encuentra dentro de la palabra, se mostrara en su posicion");
         System.out.println("Si la letra no se encontrase en la palabra, la letra se añade a una lista de letras falladas");
         System.out.println("El juego acaba cuando has descubierto la palabra o has matado al personaje");
     }
 
     public void jugar() {
+        char i;
         mostrarInstrucciones();
         while (true) {
-            this.horca.mostrarHorca();
-            System.out.println("" + this.guiones.getGuiones().toString());
-            System.out.println("" + this.fallos.mostrarFallos());
-            this.intento.pedirLetra();
-            int aux = this.guiones.getPalabraSecreta().indexOf(this.intento.getLetra());
-            if (aux != -1) {
-                this.guiones.getGuiones().setCharAt(aux, this.intento.getLetra());
+            this.horca.mostrar();
+            System.out.println("" + this.guiones.mostrar());
+            System.out.println("Fallos: " + this.fallos.mostrar());
+            i = this.intento.pedirLetra();
+            if (this.guiones.comprobarLetra(i)) {
+                this.guiones.sustituirLetra(i);
             } else {
                 this.fallos.añadirLetra(this.intento.getLetra());
                 this.horca.quitarVida();
             }
-            {
-                if (this.guiones.getGuiones().toString().equals(this.guiones.getPalabraSecreta())) {
-                    System.out.println("¡HAS GANADO!");
-                    return;
-                }
+
+            if (this.guiones.mostrar().equals(this.guiones.getPalabraSecreta())) {
+                System.out.println("¡HAS GANADO!");
+                return;
             }
-            if (this.horca.getVida() == 6 || this.fallos.getListaFallos().size() == this.guiones.getGuiones().length()) {
+
+            if (this.horca.getVida() > 6) {
                 System.out.println("¡HAS PERDIDO!");
                 return;
             }

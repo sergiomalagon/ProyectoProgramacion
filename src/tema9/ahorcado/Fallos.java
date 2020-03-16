@@ -19,7 +19,7 @@ public class Fallos {
         this.listaFallos = new HashSet<Character>();
     }
 
-    public String mostrarFallos() {
+    public String mostrar() {
         return this.listaFallos.toString();
     }
 

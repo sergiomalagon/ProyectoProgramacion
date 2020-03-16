@@ -17,10 +17,12 @@ public class Guiones {
     private StringBuilder guiones;
     private Fallos fallos;
     private Horca horca;
+    private Intento intento;
 
     public Guiones() {
+        this.intento = new Intento();
         this.guiones = new StringBuilder();
-        this.fallos =new Fallos();
+        this.fallos = new Fallos();
         this.horca = new Horca();
         damePalabraAleatoria();
         generarGuiones();
@@ -36,42 +38,35 @@ public class Guiones {
     public void damePalabraAleatoria() {
         Random rd = new Random();
         int aux = rd.nextInt(6);
-        String[] selector = new String[]{"platano", "perro", "casa", "coche", "gato", "avion"};
+        String[] selector = new String[]{"platano", "moto", "casa", "coche", "gato", "avion"};
         String palabraSecreta = selector[aux];
         this.palabraSecreta = palabraSecreta;
+    }
+
+    public boolean comprobarLetra(char letra) {
+        int aux = this.palabraSecreta.indexOf(letra);
+        return aux != -1;
+    }
+
+    public StringBuilder sustituirLetra(char y) {
+        for (int i = 0; i < this.guiones.length(); i++) {
+            if (this.palabraSecreta.charAt(i) == y) {
+                this.guiones.setCharAt(i, y);
+            }
+        }
+        return this.guiones;
     }
 
     public String getPalabraSecreta() {
         return palabraSecreta;
     }
 
-    public void setPalabraSecreta(String palabraSecreta) {
-        this.palabraSecreta = palabraSecreta;
+    public String mostrar() {
+        return guiones.toString();
     }
 
     public StringBuilder getGuiones() {
         return guiones;
     }
-
-    public void setGuiones(StringBuilder guiones) {
-        this.guiones = guiones;
-    }
-
-    public Fallos getFallos() {
-        return fallos;
-    }
-
-    public void setFallos(Fallos fallos) {
-        this.fallos = fallos;
-    }
-
-    public Horca getHorca() {
-        return horca;
-    }
-
-    public void setHorca(Horca horca) {
-        this.horca = horca;
-    }
-    
 
 }
